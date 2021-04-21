@@ -75,7 +75,7 @@ Enter one part that's real and another part that's faked/mocked.
 Read input from server     | csv file     | internal data-structure     | Fake the server store
 Validate input             | csv data     | valid / invalid             | None - it's a pure function
 Notify report availability | New PDF report | Notification over email   | Fake the email notification
-Report inaccessible server | Access to Server | PDF with reading invalid input           |Fake teh PDF print.
+Report inaccessible server | Access to Server | PDF with reading invalid input           |Fake the PDF print.
 Find minimum and maximum   | CSV data | Minimum and Maximum values               | None - it's a pure function
 Detect trend               | Trend setting input | Observe the reading for the trend setting.           | None - it's a pure function
 Write to PDF               | Analysed Data | PDF file             | Fake- Print statements to check.
