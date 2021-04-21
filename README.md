@@ -27,8 +27,12 @@ Notification must be sent when a new report is available.
 List the dependencies of the Analysis-functionality.
 
 1. Access to the Server containing the telemetrics in a csv file
-1. _enter dependency
-1. _enter dependency
+2. CSV file to PDF converter plugins.
+3. List of Recipients to be notified every week.
+4. Breach limits information.
+5. Real Time Clock data for timestamp information for recording trends.
+6. Trend setting information as to what is to be considered as a trend.
+7. The means of notifying mechanism to be known e.g. is it email alert or controller alert or any other system alert.
 
 (add more if needed)
 
@@ -40,10 +44,10 @@ What is included in the software unit-test? What is not? Fill this table.
 |---------------------------|---------------|---
 Battery Data-accuracy       | No            | We do not test the accuracy of data
 Computation of maximum      | Yes           | This is part of the software being developed
-Off-the-shelf PDF converter | _enter Yes/No | _enter reasoning
-Counting the breaches       | _enter Yes/No | _enter reasoning
-Detecting trends            | _enter Yes/No | _enter reasoning
-Notification utility        | _enter Yes/No | _enter reasoning
+Off-the-shelf PDF converter | Yes           | This is the plugin being used.
+Counting the breaches       | Yes           | Tracking when the BMS reading is breached with the Pure function.
+Detecting trends            | Yes           | Once the trend setting is done , we could take timestamp when the trend detected with the help of Real time clock.
+Notification utility        | Yes           | Alert functionality could be implemented once the notification means is known to the developer.
 
 ### List the Test Cases
 
@@ -52,9 +56,13 @@ Write tests in the form of `<expected output or action>` from `<input>` / when `
 Add to these tests:
 
 1. Write minimum and maximum to the PDF from a csv containing positive and negative readings
-1. Write "Invalid input" to the PDF when the csv doesn't contain expected data
-1. _enter a test
-1. _enter a test
+2. Write "Invalid input" to the PDF when the csv doesn't contain expected data
+3. Write "Breach exists" from the values provided when Breach is detected.
+4. Measure number of breaches when the breaching happens over a period of time with respect to RTC.
+5. Check Trend is recorded when the reading was behaving according to rules of trend setting.
+6. Check Notification is sent when a week is passed.
+7. Check the notifcation has returned with NULL data when the CSV file is empty.
+8. Check that the exception is thrown when recorded Timestamp does not alighn with Real time clock.
 
 (add more)
 
@@ -68,8 +76,8 @@ Enter one part that's real and another part that's faked/mocked.
 |--------------------------|--------------|-----------------------------|---
 Read input from server     | csv file     | internal data-structure     | Fake the server store
 Validate input             | csv data     | valid / invalid             | None - it's a pure function
-Notify report availability | _enter input | _enter output               | _enter fake or mock
-Report inaccessible server | _enter input | _enter output               | _enter fake or mock
-Find minimum and maximum   | _enter input | _enter output               | _enter fake or mock
-Detect trend               | _enter input | _enter output               | _enter fake or mock
-Write to PDF               | _enter input | _enter output               | _enter fake or mock
+Notify report availability | New PDF report | Notification over email   | Fake the email notification
+Report inaccessible server | Access to Server | PDF with reading invalid input           |Fake teh PDF print.
+Find minimum and maximum   | CSV data | Minimum and Maximum values               | None - it's a pure function
+Detect trend               | Trend setting input | Observe the reading for the trend setting.           | None - it's a pure function
+Write to PDF               | Analysed Data | PDF file             | Fake- Print statements to check.
