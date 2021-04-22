@@ -32,8 +32,6 @@ List the dependencies of the Analysis-functionality.
 6. Trend setting information as to what is to be considered as a trend.
 7. The means of notifying mechanism to be known e.g. is it email alert or controller alert or any other system alert.
 
-(add more if needed)
-
 ### Mark the System Boundary
 
 What is included in the software unit-test? What is not? Fill this table.
@@ -61,8 +59,6 @@ Add to these tests:
 6. Check Notification is sent when a week is passed.
 7. Check the notifcation has returned with NULL data when the CSV file is empty.
 8. Check that the exception is thrown when recorded Timestamp does not alighn with Real time clock.
-
-(add more)
 
 ### Recognize Fakes and Reality
 
