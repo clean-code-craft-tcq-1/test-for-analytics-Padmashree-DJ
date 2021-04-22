@@ -31,6 +31,7 @@ List the dependencies of the Analysis-functionality.
 5. Real Time Clock data for timestamp information for recording trends.
 6. Trend setting information as to what is to be considered as a trend.
 7. The means of notifying mechanism to be known e.g. is it email alert or controller alert or any other system alert.
+8. Storage device or memory to store PDF generated.
 
 ### Mark the System Boundary
 
@@ -49,16 +50,23 @@ Notification utility        | Yes           | Alert functionality could be imple
 
 Write tests in the form of `<expected output or action>` from `<input>` / when `<event>`
 
-Add to these tests:
-
-1. Write minimum and maximum to the PDF from a csv containing positive and negative readings
-2. Write "Invalid input" to the PDF when the csv doesn't contain expected data
-3. Write "Breach exists" from the values provided when Breach is detected.
-4. Measure number of breaches when the breaching happens over a period of time with respect to RTC.
-5. Check Trend is recorded when the reading was behaving according to rules of trend setting.
-6. Check Notification is sent when a week is passed.
-7. Check the notifcation has returned with NULL data when the CSV file is empty.
-8. Check that the exception is thrown when recorded Timestamp does not alighn with Real time clock.
+1. Write minimum and maximum to the PDF from a csv containing positive and negative readings.
+2. Write "Invalid input" to the PDF when the csv doesn't contain expected data.
+3. Write "Breach exists" to the PDF from the values provided when Breach is detected.
+4. Write "No breach detected" from the values input provided when Breach is not detected.
+5. Check if Measured number of breaches is available in PDF when the breaching happens over a period of time with respect to RTC.
+6. Check Counted breaches are calcaluted over a period of month.i.e. no data loss.
+7. Check Trend is recorded when the reading was behaving according to rules of trend setting.
+8. Check Trend is not recorded when the reading is not accroding to the trend setting done.
+9. Check PDF generated is successfully stored in the Memory device.
+10. Check PDF generation happens every week when the required inputs are given.
+11. Check Notification is sent when a week is passed.
+12. Check Notification is sent when new PDF is generated.
+13. Check if the notification is sent using notification utility to all the users/Applications when new report is available.
+14. Check the notification has returned with NULL data when the CSV file is empty.
+15. Check that the exception is thrown when recorded Timestamp does not alighn with Real time clock.
+16. Write "Empty input file" to PDF when the input CSV file has no data.
+17. Check access to server by printing the data directly from CSV to external console or PDF when reading the data from CSV file.
 
 ### Recognize Fakes and Reality
 
