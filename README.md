@@ -50,7 +50,7 @@ Notification utility        | Yes           | Alert functionality could be imple
 
 Write tests in the form of `<expected output or action>` from `<input>` / when `<event>`
 
-1. Write minimum and maximum to the PDF from a csv containing positive and negative readings.
+1. Write minimum and maximum to the PDF from a csv containing positive and negative readings(batch processing).
 2. Write "Invalid input" to the PDF when the csv doesn't contain expected data.
 3. Write "Breach exists" to the PDF from the values provided when Breach is detected.
 4. Write "No breach detected" from the values input provided when Breach is not detected.
